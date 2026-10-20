@@ -1,0 +1,176 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StegoVision | AI Image Security</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #07111f;
+            color: #f1f5f9;
+            min-height: 100vh;
+        }
+
+        header {
+            padding: 24px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #243449;
+        }
+
+        .logo {
+            font-size: 25px;
+            font-weight: bold;
+            color: #5eead4;
+        }
+
+        header span {
+            color: #94a3b8;
+            font-size: 13px;
+        }
+
+        main {
+            max-width: 1100px;
+            margin: 60px auto;
+            padding: 0 24px;
+        }
+
+        .hero {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .hero h1 {
+            font-size: clamp(30px, 5vw, 48px);
+            margin-bottom: 16px;
+        }
+
+        .hero h1 span {
+            color: #5eead4;
+        }
+
+        .hero p {
+            color: #94a3b8;
+            line-height: 1.7;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+        }
+
+        .card {
+            background: #101e30;
+            border: 1px solid #263a50;
+            border-radius: 18px;
+            padding: 28px;
+            transition: 0.25s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: #5eead4;
+        }
+
+        .icon {
+            font-size: 35px;
+            margin-bottom: 20px;
+        }
+
+        .card h2 {
+            font-size: 21px;
+            margin-bottom: 12px;
+        }
+
+        .card p {
+            color: #a5b4c7;
+            line-height: 1.6;
+            font-size: 14px;
+            min-height: 68px;
+        }
+
+        .card a {
+            display: inline-block;
+            margin-top: 24px;
+            background: #5eead4;
+            color: #07111f;
+            padding: 12px 18px;
+            border-radius: 8px;
+            font-weight: bold;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: #64748b;
+            font-size: 13px;
+        }
+
+        @media (max-width: 750px) {
+            .cards {
+                grid-template-columns: 1fr;
+            }
+
+            main {
+                margin-top: 35px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">◈ StegoVision</div>
+        <span>AI-Powered Image Security</span>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1>See Beyond the <span>Pixels.</span></h1>
+            <p>
+                Hide secret messages, analyze suspicious images,
+                and extract hidden information using image processing
+                and machine learning.
+            </p>
+        </section>
+
+        <section class="cards">
+            <article class="card">
+                <div class="icon">🔐</div>
+                <h2>Encode Message</h2>
+                <p>Hide a secret message inside an image and generate a stego image.</p>
+                <a href="/encode">Start Encoding →</a>
+            </article>
+
+            <article class="card">
+                <div class="icon">🤖</div>
+                <h2>AI Detection</h2>
+                <p>Use the trained CNN model to classify an image as normal or stego.</p>
+                <a href="/detect">Analyze Image →</a>
+            </article>
+
+            <article class="card">
+                <div class="icon">🔓</div>
+                <h2>Decode Message</h2>
+                <p>Extract a message from an image encoded by StegoVision.</p>
+                <a href="/decode">Extract Message →</a>
+            </article>
+        </section>
+    </main>
+
+    <footer>
+        StegoVision © 2026 · Image Processing + Machine Learning
+    </footer>
+</body>
+</html>

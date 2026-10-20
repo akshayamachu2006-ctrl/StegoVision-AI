@@ -1,0 +1,40 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Encode | StegoVision</title>
+<style>
+body{font-family:Arial;background:#07111f;color:#f1f5f9;margin:0;padding:35px}
+main{max-width:600px;margin:45px auto;background:#101e30;padding:30px;border-radius:16px}
+h1{color:#5eead4}p{color:#a5b4c7}
+input,textarea,button{width:100%;box-sizing:border-box;margin-top:15px;padding:13px;border-radius:8px}
+input,textarea{background:#07111f;color:white;border:1px solid #334155}
+button{background:#5eead4;border:0;font-weight:bold;cursor:pointer}
+a{color:#5eead4}img{max-width:100%;margin-top:20px;border-radius:10px}
+.error{color:#fca5a5}.success{color:#5eead4}
+</style>
+</head>
+<body>
+<main>
+<a href="/">← Home</a>
+<h1>🔐 Hide a Secret Message</h1>
+<p>Choose an image and enter the message you want to hide.</p>
+
+{% if error %}<p class="error">{{ error }}</p>{% endif %}
+{% if result %}<p class="success">{{ result }}</p>{% endif %}
+
+<form method="POST" enctype="multipart/form-data">
+<input type="file" name="image" accept="image/*" required>
+<textarea name="message" rows="4" placeholder="Enter your secret message..." required></textarea>
+<button type="submit">Encode Image</button>
+</form>
+
+{% if output_image %}
+<img src="{{ output_image }}" alt="Encoded image">
+<p><a href="/download/{{ download_name }}">Download Stego Image</a></p>
+{% endif %}
+</main>
+</body>
+</html>

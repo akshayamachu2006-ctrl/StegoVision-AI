@@ -1,0 +1,40 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Decode | StegoVision</title>
+<style>
+body{font-family:Arial;background:#07111f;color:#f1f5f9;padding:35px}
+main{max-width:600px;margin:45px auto;background:#101e30;padding:30px;border-radius:16px}
+h1{color:#5eead4}p{color:#a5b4c7}
+input,button{width:100%;box-sizing:border-box;margin-top:18px;padding:13px;border-radius:8px}
+input{background:#07111f;color:white;border:1px solid #334155}
+button{background:#5eead4;border:0;font-weight:bold;cursor:pointer}
+a{color:#5eead4}.error{color:#fca5a5}
+.result{background:#07111f;border:1px solid #334155;padding:18px;border-radius:10px;margin-top:20px;overflow-wrap:anywhere}
+</style>
+</head>
+<body>
+<main>
+<a href="/">← Home</a>
+<h1>🔓 Extract Secret Message</h1>
+<p>Upload a compatible image created by StegoVision.</p>
+
+{% if error %}<p class="error">{{ error }}</p>{% endif %}
+
+<form method="POST" enctype="multipart/form-data">
+<input type="file" name="image" accept="image/*" required>
+<button type="submit">Decode Image</button>
+</form>
+
+{% if message is defined %}
+<div class="result">
+<h3>Extracted content</h3>
+<p>{{ message }}</p>
+</div>
+{% endif %}
+</main>
+</body>
+</html>
